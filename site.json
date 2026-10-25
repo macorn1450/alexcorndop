@@ -120,6 +120,19 @@
           ]
         },
         {
+          "title": "Build AI That Matters",
+          "client": "Prime Video",
+          "cuts": [
+            {
+              "vimeo": "1239271151",
+              "seconds": 93,
+              "w": 1920,
+              "h": 1080,
+              "thumb": "2216720426-15bc83f072dabda3d804d03ebb1206f89adb1b5ab37dccd832124ef2eb83446e-d"
+            }
+          ]
+        },
+        {
           "title": "Trey Roger's Story",
           "client": "American College of Surgeons",
           "cuts": [
@@ -260,6 +273,19 @@
             }
           ],
           "aspect": "2.39 : 1"
+        },
+        {
+          "title": "Build AI That Matters",
+          "client": "Prime Video",
+          "cuts": [
+            {
+              "vimeo": "1239271151",
+              "seconds": 93,
+              "w": 1920,
+              "h": 1080,
+              "thumb": "2216720426-15bc83f072dabda3d804d03ebb1206f89adb1b5ab37dccd832124ef2eb83446e-d"
+            }
+          ]
         },
         {
           "title": "Always a Way: Tricia's Story",
