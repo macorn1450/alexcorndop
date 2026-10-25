@@ -37,7 +37,7 @@ nav a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
 .client{font-family:var(--mono);font-size:var(--s-1);color:var(--mute);letter-spacing:.04em;text-transform:uppercase;text-align:right}
 @media (hover:hover){.list:hover .row .title{color:var(--rule)}.list:hover .row:hover .title,.list .row:focus-visible .title{color:var(--ink)}}
 
-.peek{position:fixed;left:0;top:0;width:min(22vw,300px);pointer-events:none;z-index:4;opacity:0;transform:translate3d(-999px,0,0);background:var(--frame)}
+.peek{position:fixed;left:50%;top:50%;width:min(30vw,400px);pointer-events:none;z-index:4;opacity:0;transform:translate(-50%,-50%)}
 .peek img{width:100%;height:auto;opacity:0;transform:scale(.96);transition:opacity .35s ease,transform .45s ease}
 .peek.on{opacity:1}
 .peek.on img{opacity:.92;transform:scale(1)}

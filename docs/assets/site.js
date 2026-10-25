@@ -8,33 +8,19 @@
   var rt=function(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
   var esc=function(s){return String(s).replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]})};
 
-  // Hover still: appears after a short pause, then drifts after the cursor instead of snapping to it
-  var showT=null, tx=-999, ty=0, cx=-999, cy=0, raf=null, visible=false;
-  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Hover still: fixed in the center of the screen, fades in after a short pause
+  var showT=null, visible=false;
   document.querySelectorAll('.row').forEach(function(r){
     var i=+r.dataset.i;
     r.addEventListener('mouseenter',function(){
       if(!peek)return; clearTimeout(showT);
-      showT=setTimeout(function(){ peekImg.src=thumb(P[i].cuts[0].thumb); if(!visible){cx=tx;cy=ty} visible=true; peek.classList.add('on'); tick() }, visible?0:140);
+      showT=setTimeout(function(){ peekImg.src=thumb(P[i].cuts[0].thumb); visible=true; peek.classList.add('on') }, visible?0:140);
     });
     r.addEventListener('mouseleave',function(){ clearTimeout(showT) });
     r.addEventListener('click',function(e){ e.preventDefault(); open(i,true) });
   });
   var list=document.querySelector('.list');
   list&&list.addEventListener('mouseleave',function(){ clearTimeout(showT); visible=false; peek&&peek.classList.remove('on') });
-  function tick(){
-    if(!peek)return;
-    cx+=(tx-cx)*(still?1:.14); cy+=(ty-cy)*(still?1:.14);
-    peek.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0)';
-    raf=(visible&&(Math.abs(tx-cx)>.5||Math.abs(ty-cy)>.5))?requestAnimationFrame(tick):null;
-  }
-  document.addEventListener('mousemove',function(e){
-    if(!peek)return;
-    var w=peek.offsetWidth,h=peek.offsetHeight||w*9/16,x=e.clientX+40,y=e.clientY-h/2;
-    if(x+w>innerWidth-16)x=e.clientX-w-40;
-    tx=x; ty=Math.max(16,Math.min(innerHeight-h-16,y));
-    if(visible&&!raf) raf=requestAnimationFrame(tick);
-  });
   // Warm the cache for the first few stills
   P.slice(0,6).forEach(function(p){var im=new Image();im.src=thumb(p.cuts[0].thumb)});
 
