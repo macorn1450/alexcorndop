@@ -14,7 +14,7 @@
     var i=+r.dataset.i;
     r.addEventListener('mouseenter',function(){
       if(!peek)return; clearTimeout(showT);
-      showT=setTimeout(function(){ peekImg.src=thumb(P[i].cuts[0].thumb); visible=true; peek.classList.add('on') }, visible?0:140);
+      showT=setTimeout(function(){ peekImg.src=thumb(P[i].cuts[0].thumb,1280); visible=true; peek.classList.add('on') }, visible?0:140);
     });
     r.addEventListener('mouseleave',function(){ clearTimeout(showT) });
     r.addEventListener('click',function(e){ e.preventDefault(); open(i,true) });
@@ -22,7 +22,7 @@
   var list=document.querySelector('.list');
   list&&list.addEventListener('mouseleave',function(){ clearTimeout(showT); visible=false; peek&&peek.classList.remove('on') });
   // Warm the cache for the first few stills
-  P.slice(0,6).forEach(function(p){var im=new Image();im.src=thumb(p.cuts[0].thumb)});
+  P.slice(0,6).forEach(function(p){var im=new Image();im.src=thumb(p.cuts[0].thumb,1280)});
 
   function player(c,auto){
     var q='?'+(c.hash?'h='+c.hash+'&':'')+'title=0&byline=0&portrait=0&dnt=1'+(auto?'&autoplay=1':'');
