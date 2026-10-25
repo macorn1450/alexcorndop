@@ -113,6 +113,7 @@ fs.copyFileSync('src/site.css', path.join(OUT, 'assets/site.css'));
 fs.copyFileSync('src/site.js', path.join(OUT, 'assets/site.js'));
 fs.writeFileSync(path.join(OUT, 'favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#121314"/><circle cx="16" cy="16" r="4" fill="#c8742a"/></svg>`);
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
+fs.writeFileSync(path.join(OUT, 'CNAME'), 'alexcorndop.com\n');
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${DOMAIN}/sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `  <url><loc>${DOMAIN}/${p.path}</loc></url>`).join('\n')}\n</urlset>\n`);
 console.log('Built', pages.length, 'pages into', OUT);
