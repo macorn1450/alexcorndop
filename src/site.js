@@ -41,7 +41,7 @@
       cuts+
       '<h2 id="sheetTitle">'+esc(p.title)+'</h2>'+
       '<dl class="credits"><div><dt>Client</dt><dd>'+esc(p.client)+'</dd></div><div><dt>Role</dt><dd>'+esc(role)+'</dd></div>'+
-      (multi?'<div><dt>Versions</dt><dd>'+p.cuts.map(function(c){return esc(c.label)+' '+rt(c.seconds)}).join(' · ')+'</dd></div>':'<div><dt>Runtime</dt><dd>'+rt(p.cuts[0].seconds)+'</dd></div>')+
+      (multi?'<div><dt>'+(p.kind==='films'?'Films':'Versions')+'</dt><dd>'+p.cuts.map(function(c){return esc(c.label)+' '+rt(c.seconds)}).join(' · ')+'</dd></div>':'<div><dt>Runtime</dt><dd>'+rt(p.cuts[0].seconds)+'</dd></div>')+
       (p.aspect?'<div><dt>Aspect ratio</dt><dd>'+esc(p.aspect)+'</dd></div>':'')+
       (p.credits?'<div><dt>Credits</dt><dd>'+esc(p.credits)+'</dd></div>':'')+'</dl>'+
       '<div class="nav2"><button class="btn-text" id="prevBtn" type="button">← '+esc(prev.title)+'</button><button class="btn-text" id="nextBtn" type="button">'+esc(next.title)+' →</button></div></div>';

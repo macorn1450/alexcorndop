@@ -86,7 +86,7 @@ for (const page of pages) {
   const role = page.role || page.label;
   const projects = page.projects.map(p => ({ ...p, slug: slug(p.title + '-' + p.client) }));
   const total = projects.reduce((a, p) => a + p.cuts.reduce((s, c) => s + c.seconds, 0), 0);
-  const rows = projects.map((p, i) => `      <li><a class="row" href="#${p.slug}" data-i="${i}"><img class="thumb" src="${thumb(p.cuts[0].thumb, 320)}" alt="" loading="lazy"><span class="title">${esc(p.title)}</span><span class="client">${esc(p.client)}${p.cuts.length > 1 ? ' · ' + p.cuts.length + ' cuts' : ''}</span></a></li>`).join('\n');
+  const rows = projects.map((p, i) => `      <li><a class="row" href="#${p.slug}" data-i="${i}"><img class="thumb" src="${thumb(p.cuts[0].thumb, 320)}" alt="" loading="lazy"><span class="title">${esc(p.title)}</span><span class="client">${esc(p.client)}${p.cuts.length > 1 ? ' · ' + p.cuts.length + ' ' + (p.kind || 'cuts') : ''}</span></a></li>`).join('\n');
   const title = page.path ? `${page.label} · ${site.name}` : `${site.name} · Director, Cinematographer, Producer`;
   const clients = [...new Set(projects.map(p => p.client))].slice(0, 6).join(', ');
   const description = `${site.name}, ${role.toLowerCase()}. ${page.intro.replace(/\.$/, '')} for ${clients} and more.`;
