@@ -121,9 +121,18 @@
         },
         {
           "title": "Build AI That Matters",
-          "client": "Prime Video",
+          "client": "Amazon",
           "cuts": [
             {
+              "label": "At Amazon",
+              "vimeo": "1239328508",
+              "seconds": 105,
+              "w": 1920,
+              "h": 1080,
+              "thumb": "2216807245-83647386bc7591bbfd6da18f66eccdb3d09df608bd65589e73f906863d841c45-d"
+            },
+            {
+              "label": "At Prime Video",
               "vimeo": "1239271151",
               "seconds": 93,
               "w": 1920,
@@ -276,9 +285,18 @@
         },
         {
           "title": "Build AI That Matters",
-          "client": "Prime Video",
+          "client": "Amazon",
           "cuts": [
             {
+              "label": "At Amazon",
+              "vimeo": "1239328508",
+              "seconds": 105,
+              "w": 1920,
+              "h": 1080,
+              "thumb": "2216807245-83647386bc7591bbfd6da18f66eccdb3d09df608bd65589e73f906863d841c45-d"
+            },
+            {
+              "label": "At Prime Video",
               "vimeo": "1239271151",
               "seconds": 93,
               "w": 1920,
